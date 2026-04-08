@@ -17,13 +17,13 @@ public class AppDownloadable : AppBase
     [JsonProperty("DownloadUrl")]
     public string DownloadUrl { get; set; }
 
-    [JsonProperty("DownloadPath")]
+    [JsonIgnore]
     protected string _downloadPath;
     
-    [JsonProperty("DownloadPathFile")]
+    [JsonIgnore]
     protected string _downloadPathFile;
     
-    [JsonProperty("SkipRun")]
+    [JsonIgnore]
     protected bool _skipRun;
 
     public AppDownloadable(string downloadUrl, string name, string? customName = null,

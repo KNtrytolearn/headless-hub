@@ -13,15 +13,34 @@ public abstract class AppBase
 {
     public const int MaxAppMonitorEntries = 600;
 
+    [JsonProperty("Name")]
     public string Name { get; set; }
+    
+    [JsonProperty("CustomName")]
     public string CustomName { get; set; }
+    
+    [JsonProperty("HelpUrl")]
     public string? HelpUrl { get; set; }
+    
+    [JsonProperty("ChangelogUrl")]
     public string? ChangelogUrl { get; set; }
+    
+    [JsonProperty("DescriptionShort")]
     public string? DescriptionShort { get; set; }
+    
+    [JsonProperty("DescriptionLong")]
     public string? DescriptionLong { get; protected set; }
+    
+    [JsonProperty("RunAsAdmin")]
     public bool RunAsAdmin { get; protected set; }
+    
+    [JsonProperty("Chmod")]
     public bool Chmod { get; set; }
+    
+    [JsonProperty("StartWindowState")]
     public ProcessWindowStyle StartWindowState { get; protected set; }
+    
+    [JsonProperty("Configuration")]
     public Configuration? Configuration { get; protected set; }
 
     [JsonIgnore]

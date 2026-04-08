@@ -8,10 +8,10 @@ class Program
 {
     static async Task Main(string[] args)
     {
-        Console.WriteLine("鈺斺晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晽");
-        Console.WriteLine("鈺?      HeadlessHub for autodarts.io       鈺?);
-        Console.WriteLine("鈺?    RK3528 Darts Extension Manager       鈺?);
-        Console.WriteLine("鈺氣晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨暆");
+        Console.WriteLine("==========================================");
+        Console.WriteLine("       HeadlessHub for autodarts.io      ");
+        Console.WriteLine("     RK3528 Darts Extension Manager      ");
+        Console.WriteLine("==========================================");
         Console.WriteLine();
 
         var dataDir = Path.Combine(Environment.CurrentDirectory, "data");

@@ -1,3 +1,5 @@
+using Newtonsoft.Json;
+
 namespace HeadlessHub.Core.Model;
 
 /// <summary>
@@ -5,9 +7,16 @@ namespace HeadlessHub.Core.Model;
 /// </summary>
 public class Configuration
 {
+    [JsonProperty("Prefix")]
     public string Prefix { get; private set; }
+    
+    [JsonProperty("Delimiter")]
     public string Delimiter { get; private set; }
+    
+    [JsonProperty("Arguments")]
     public List<Argument> Arguments { get; private set; }
+    
+    [JsonProperty("IsRaw")]
     public bool IsRaw { get; private set; }
 
     public static readonly string ArgumentErrorKey = "ArgumentValidateParse-Error";

@@ -1,3 +1,4 @@
+using HeadlessHub.Core.Control;
 using Newtonsoft.Json;
 using System.Diagnostics;
 using System.Runtime.InteropServices;

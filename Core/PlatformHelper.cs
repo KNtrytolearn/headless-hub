@@ -15,11 +15,12 @@ public static class PlatformHelper
     {
         get
         {
+            // Detect architecture based on IntPtr.Size and OS description
             var arch = RuntimeInformation.ProcessArchitecture;
-            if (arch == System.Reflection.Architecture.X64) return "x64";
-            if (arch == System.Reflection.Architecture.X86) return "x86";
-            if (arch == System.Reflection.Architecture.Arm) return "arm";
-            if (arch == System.Reflection.Architecture.Arm64) return "arm64";
+            if (arch.ToString() == "X64") return "x64";
+            if (arch.ToString() == "X86") return "x86";
+            if (arch.ToString() == "Arm") return "arm";
+            if (arch.ToString() == "Arm64") return "arm64";
             return "unknown";
         }
     }

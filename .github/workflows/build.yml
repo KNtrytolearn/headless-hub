@@ -15,7 +15,7 @@ jobs:
   with:
   dotnet-version: 8.0.x
   - name: Publish
-  run: dotnet publish HeadlessHub/HeadlessHub.csproj -c Release -r ${{ matrix.rid }} --self-contained -p:PublishSingleFile=true -o ./out
+  run: dotnet publish HeadlessHub.csproj -c Release -r ${{ matrix.rid }} --self-contained -p:PublishSingleFile=true -o ./out
   - name: Pack
   run: |
   cd out

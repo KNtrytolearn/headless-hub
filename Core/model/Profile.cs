@@ -7,8 +7,13 @@ namespace HeadlessHub.Core.Model;
 /// </summary>
 public class Profile
 {
+    [JsonProperty("Name")]
     public string Name { get; private set; }
+    
+    [JsonProperty("Apps")]
     public Dictionary<string, ProfileState> Apps { get; private set; }
+    
+    [JsonProperty("IsTaggedForStart")]
     public bool IsTaggedForStart { get; set; }
 
     public Profile(string name, Dictionary<string, ProfileState> apps, bool isTaggedForStart = false)
@@ -24,9 +29,12 @@ public class Profile
 /// </summary>
 public class ProfileState
 {
+    [JsonProperty("IsRequired")]
     public bool IsRequired { get; private set; }
     
     private bool _taggedForStart;
+    
+    [JsonProperty("TaggedForStart")]
     public bool TaggedForStart
     {
         get => _taggedForStart;
@@ -37,6 +45,7 @@ public class ProfileState
         }
     }
 
+    [JsonProperty("RuntimeArguments")]
     public Dictionary<string, string>? RuntimeArguments { get; private set; }
 
     [JsonIgnore]

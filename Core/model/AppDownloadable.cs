@@ -1,4 +1,5 @@
 using HeadlessHub.Core.Control;
+using Newtonsoft.Json;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Net;
@@ -13,10 +14,16 @@ namespace HeadlessHub.Core.Model;
 /// </summary>
 public class AppDownloadable : AppBase
 {
+    [JsonProperty("DownloadUrl")]
     public string DownloadUrl { get; set; }
 
+    [JsonProperty("DownloadPath")]
     protected string _downloadPath;
+    
+    [JsonProperty("DownloadPathFile")]
     protected string _downloadPathFile;
+    
+    [JsonProperty("SkipRun")]
     protected bool _skipRun;
 
     public AppDownloadable(string downloadUrl, string name, string? customName = null,

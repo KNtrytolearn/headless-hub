@@ -1,5 +1,4 @@
 using System.Runtime.InteropServices;
-using System.Runtime.Intrinsics;
 
 namespace HeadlessHub.Core;
 
@@ -12,14 +11,18 @@ public static class PlatformHelper
     public static bool IsWindows => RuntimeInformation.IsOSPlatform(OSPlatform.Windows);
     public static bool IsMacOS => RuntimeInformation.IsOSPlatform(OSPlatform.OSX);
     
-    public static string Architecture => RuntimeInformation.ProcessArchitecture switch
+    public static string Architecture
     {
-        Architecture.X64 => "x64",
-        Architecture.X86 => "x86",
-        Architecture.Arm => "arm",
-        Architecture.Arm64 => "arm64",
-        _ => "unknown"
-    };
+        get
+        {
+            var arch = RuntimeInformation.ProcessArchitecture;
+            if (arch == System.Reflection.Architecture.X64) return "x64";
+            if (arch == System.Reflection.Architecture.X86) return "x86";
+            if (arch == System.Reflection.Architecture.Arm) return "arm";
+            if (arch == System.Reflection.Architecture.Arm64) return "arm64";
+            return "unknown";
+        }
+    }
 
     public static string OSName => RuntimeInformation.IsOSPlatform(OSPlatform.Linux) ? "Linux" :
                                    RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? "Windows" :

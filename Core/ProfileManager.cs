@@ -1,4 +1,5 @@
 using HeadlessHub.Core.Model;
+using HeadlessHub.Core.Control;
 using Newtonsoft.Json;
 
 namespace HeadlessHub.Core;

@@ -55,8 +55,13 @@ public abstract class AppBase
     [JsonIgnore]
     public string AppConsoleStdError { get; protected set; } = string.Empty;
 
+    [JsonIgnore]
     protected Process? _process;
+    
+    [JsonIgnore]
     protected int _processId;
+    
+    [JsonIgnore]
     protected Dictionary<string, string>? _runtimeArguments;
 
     public AppBase(string name, string? customName = null, string? helpUrl = null,

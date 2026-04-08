@@ -9,18 +9,39 @@ namespace HeadlessHub.Core.Model;
 /// </summary>
 public class Argument
 {
+    [JsonProperty("Name")]
     public string Name { get; set; }
+    
+    [JsonProperty("Required")]
     public bool Required { get; set; }
+    
+    [JsonProperty("Type")]
     public string Type { get; set; }
+    
+    [JsonProperty("Section")]
     public string? Section { get; set; }
+    
+    [JsonProperty("Description")]
     public string? Description { get; set; }
+    
+    [JsonProperty("NameHuman")]
     public string? NameHuman { get; set; }
+    
+    [JsonProperty("RequiredOnArgument")]
     public string? RequiredOnArgument { get; set; }
+    
+    [JsonProperty("EmptyAllowedOnRequired")]
     public bool EmptyAllowedOnRequired { get; set; }
+    
+    [JsonProperty("IsRuntimeArgument")]
     public bool IsRuntimeArgument { get; set; }
+    
+    [JsonProperty("IsMulti")]
     public bool IsMulti { get; set; }
 
     private string? _value;
+    
+    [JsonProperty("Value")]
     public string? Value
     {
         get => _value;
@@ -37,6 +58,7 @@ public class Argument
         }
     }
 
+    [JsonProperty("ValueMapping")]
     public Dictionary<string, string>? ValueMapping { get; set; }
 
     [JsonIgnore]
